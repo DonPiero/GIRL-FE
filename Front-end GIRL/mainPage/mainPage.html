@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Graphical Interface Reinforcement Learning </title>
+    <link rel="stylesheet" href="mainPage.css">
+</head>
+<body>
+<header>
+    <nav id="navMain">
+        <div>
+        <img src="../assets/Images/girl.svg" id="logo" onclick="openIndexContainer(0);">
+        <button class="Button_Nav" id="myProfile" onclick="openIndexContainer(3);">
+            <img src="../assets/Images/profile.svg" class="icon">
+            <label for="myProfile" class="Label_Nav">Profile</label>
+        </button>
+        <button class="Button_Nav" id="myExperiments" onclick="openIndexContainer(2);">
+            <img src="../assets/Images/experiments.svg" class="icon">
+            <label for="myExperiments" class="Label_Nav">Experiments</label>
+        </button>
+        </div>
+        <div>
+        <button class="Button_Nav" id="logout" onclick="openIndexContainer(1);">
+            <img src="../assets/Images/logout.svg" class="icon">
+            <label for="logout" class="Label_Nav">Logout</label>
+        </button>
+        </div>
+    </nav>
+</header>
+    <div id="visualization"></div>
+    <script src="mainScript.js"></script>
+</body>
+</html>
