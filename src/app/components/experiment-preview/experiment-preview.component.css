@@ -1,0 +1,48 @@
+:host{
+  border: 1px solid ghostwhite;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: ghostwhite;
+  padding: 5px;
+  margin: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  position: relative;
+  cursor: grab;
+}
+
+:host:hover .remove{
+  width: 80px;
+}
+
+.remove{
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: linear-gradient(to left, ghostwhite 0%, ghostwhite 55%, rgba(248,248,255,0) 100%);
+  transition: 0.3s;
+}
+img{
+  width: 20px;
+  margin: auto 10px;
+  cursor: pointer;
+}
+
+.identification {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.id {
+  font-size: smaller;
+}
+
+

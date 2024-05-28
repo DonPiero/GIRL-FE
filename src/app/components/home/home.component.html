@@ -1,0 +1,44 @@
+<div class="title_welcome"> Welcome to <img class="logo" src="../assets/Images/girl.svg"></div>
+<div class="parent">
+  <ul class="nav nav-pills">
+    <li class="nav-item" [class.inactive_button]="!isActive[0]" [class.active_button]="isActive[0]" (click)="toggleActive(0)">
+      <a class="nav-link">Abstract</a>
+    </li>
+    <li class="nav-item" [class.inactive_button]="!isActive[1]" [class.active_button]="isActive[1]" (click)="toggleActive(1)">
+      <a class="nav-link">Overview</a>
+    </li>
+    <li class="nav-item" [class.inactive_button]="!isActive[2]" [class.active_button]="isActive[2]" (click)="toggleActive(2)">
+      <a class="nav-link">Significance</a>
+    </li>
+    <li class="nav-item" [class.inactive_button]="!isActive[3]" [class.active_button]="isActive[3]" (click)="toggleActive(3)">
+      <a class="nav-link">Conclusion</a>
+    </li>
+  </ul>
+
+  <div class="text">
+    <div class="container" [class.active_container]="isActive[0]" [class.inactive_container]="!isActive[0]">"G.I.R.L." (Graphical Interface for Reinforcement Learning) is a bachelor's thesis project which aims to develop an
+      interactive graphic interface tailored for conducting experiments in reinforcement learning (RL) frameworks.
+    </div>
+
+    <div class="container" [class.active_container]="isActive[1]" [class.inactive_container]="!isActive[1]">Reinforcement learning, a prominent area in artificial intelligence, necessitates rigorous experimentation with
+      various parameters to optimize learning algorithms. This interface will empower users to manipulate RL parameters,
+      execute experiments, and visualize performance statistics seamlessly. Through a user-friendly interface, individuals
+      ranging from novice learners to experienced researchers can explore RL algorithms and environments efficiently. This
+      project integrates software development, machine learning, and user interface design to create a versatile tool for
+      the RL community.</div>
+
+    <div class="container" [class.active_container]="isActive[2]" [class.inactive_container]="!isActive[2]">
+      This project addresses the need for accessible tools that streamline the experimentation process in reinforcement
+      learning. By democratizing access to RL experimentation, this interface has the potential to accelerate research and
+      innovation in the field. Furthermore, it serves as an educational resource for students and enthusiasts looking to
+      delve into RL concepts and methodologies.
+    </div>
+
+    <div class="container" [class.active_container]="isActive[3]" [class.inactive_container]="!isActive[3]">
+      This bachelor's thesis project aims to contribute to the advancement of reinforcement learning by developing a
+      user-friendly experimentation interface. By fostering experimentation and exploration, this
+      project endeavors to foster a community of practice centered around continuous learning and improvement in
+      reinforcement learning methodologies.
+    </div>
+  </div>
+</div>

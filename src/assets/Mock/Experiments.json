@@ -1,0 +1,147 @@
+[
+    {
+      "name": "Experiment 1",
+      "id": "1276425",
+      "date": "2023/05/25",
+      "parameters": {
+        "graph": "gxkvhkhigcowrab",
+        "model": "0",
+        "instance": "[8, 6, 7, 2, 5, 4, 0, 3, 1]",
+        "epsilon": "1",
+        "decay": "0.9",
+        "alpha": "0.9",
+        "discount": "0.9",
+        "run": "0",
+        "time": "105868.32",
+        "percentage": "42",
+        "Q size": "15629"
+      }
+    },
+    {
+      "name": "Experiment 2",
+      "id": "1276426",
+      "date": "2024/06/24",
+      "parameters": {
+        "graph": "osqbayachdaafro",
+        "model": "0",
+        "instance": "[8, 6, 7, 2, 5, 4, 0, 3, 1]",
+        "epsilon": "1",
+        "decay": "0.9",
+        "alpha": "0.9",
+        "discount": "0.9",
+        "run": "1",
+        "time": "102679.21",
+        "percentage": "44",
+        "Q size": "15198"
+      }
+    },
+    {
+      "name": "Experiment 3",
+      "id": "1276427",
+      "date": "2020/07/02",
+      "parameters": {
+        "graph": "uygzdjrxdoqxcjr",
+        "model": "1",
+        "instance": "[8, 6, 7, 2, 5, 4, 0, 3, 1]",
+        "epsilon": "1",
+        "decay": "0.9",
+        "alpha": "0.9",
+        "discount": "0.9",
+        "run": "0",
+        "time": "182957.87",
+        "percentage": "15",
+        "Q size": "9"
+      }
+    },
+    {
+      "name": "Experiment 4",
+      "id": "1276428",
+      "date": "2019/07/04",
+      "parameters": {
+        "graph": "ktmrjarqudlejcp",
+        "model": "1",
+        "instance": "[8, 6, 7, 2, 5, 4, 0, 3, 1]",
+        "epsilon": "1",
+        "decay": "0.9",
+        "alpha": "0.9",
+        "discount": "0.9",
+        "run": "1",
+        "time": "182822.49",
+        "percentage": "15",
+        "Q size": "18"
+      }
+    },
+  {
+    "name": "Experiment 5",
+    "id": "1276429",
+    "date": "2024/08/13",
+    "parameters": {
+      "graph": "ytiwaypernouxbq",
+      "model": "3",
+      "instance": "[8, 6, 7, 2, 5, 4, 0, 3, 1]",
+      "epsilon": "1",
+      "decay": "0.9",
+      "alpha": "0.9",
+      "discount": "0.9",
+      "run": "0",
+      "time": "199379.92",
+      "percentage": "13.5",
+      "Q size": "3"
+    }
+  },
+  {
+    "name": "Experiment 6",
+    "id": "1276429",
+    "date": "2024/08/14",
+    "parameters": {
+      "graph": "ytiwaypernouxbq",
+      "model": "3",
+      "instance": "[8, 6, 7, 2, 5, 4, 0, 3, 1]",
+      "epsilon": "1",
+      "decay": "0.9",
+      "alpha": "0.9",
+      "discount": "0.9",
+      "run": "0",
+      "time": "199379.92",
+      "percentage": "13.5",
+      "Q size": "3"
+    }
+  },
+  {
+    "name": "Experiment 7",
+    "id": "1276429",
+    "date": "2024/08/15",
+    "parameters": {
+      "graph": "ytiwaypernouxbq",
+      "model": "3",
+      "instance": "[8, 6, 7, 2, 5, 4, 0, 3, 1]",
+      "epsilon": "1",
+      "decay": "0.9",
+      "alpha": "0.9",
+      "discount": "0.9",
+      "run": "0",
+      "time": "199379.92",
+      "percentage": "13.5",
+      "Q size": "3"
+    }
+  },
+  {
+    "name": "Experiment 8",
+    "id": "1276429",
+    "date": "2024/08/16",
+    "parameters": {
+      "graph": "ytiwaypernouxbq",
+      "model": "3",
+      "instance": "[8, 6, 7, 2, 5, 4, 0, 3, 1]",
+      "epsilon": "1",
+      "decay": "0.9",
+      "alpha": "0.9",
+      "discount": "0.9",
+      "run": "0",
+      "time": "199379.92",
+      "percentage": "13.5",
+      "Q size": "3"
+    }
+  }
+]
+

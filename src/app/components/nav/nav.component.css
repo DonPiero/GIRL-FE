@@ -1,0 +1,59 @@
+:host {
+  height: calc(100vh - 20px);
+  min-width: min(300px, 20%);
+  background-image: linear-gradient(to right, darkmagenta 0%, #6A1F8B 50%, darkslateblue 100% );
+  border-right: 1px solid darkslateblue;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 0 0;
+  overflow: hidden;
+
+}
+
+.navButton {
+  height: 70px;
+  width: 100%;
+  border: 0;
+  background-color: transparent;
+  transition: 0.3s;
+  font-size: larger;
+  font-weight: 1000;
+  color: ghostwhite;
+  font-family: "JetBrains Mono ExtraBold";
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.navButton:hover{
+  background-color: rgba(248, 248, 255, 0.75);
+  color: darkmagenta;
+  /* text-shadow: 1px 1px 0 ghostwhite, 1px -1px 0 ghostwhite, -1px -1px 0 ghostwhite, -1px 1px 0 ghostwhite;
+  */
+}
+
+.buttons_container{
+  width: 100%;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo_container{
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background-color: ghostwhite;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2.5%;
+}
+
+.logo{
+  margin: auto;
+  width: 60px;
+
+  transform: scale(1, -1);
+}

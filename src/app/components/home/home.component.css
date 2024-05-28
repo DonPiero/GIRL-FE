@@ -1,0 +1,126 @@
+:host {
+  width: calc(300vw - 301px);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  gap: 20px;
+  transform: translateY(20%);
+}
+
+.title_welcome {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 40px ;
+  color: darkmagenta;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid darkslateblue;
+  border-radius: 30px 30px 0 0;
+  background-image: radial-gradient(circle, darkslateblue 0%, #6A1F8B 50%, darkmagenta 100% );
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  all: unset;
+  padding: 15px 20px;
+  color: ghostwhite;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  font-size: large;
+}
+
+.nav-item{
+  position: relative;
+}
+
+.nav-item:hover{
+  background-image: linear-gradient(to right, rgba(248, 248, 255, 0) 0%,
+                                              rgba(248, 248, 255, 0.75) 15%,
+                                              rgba(248, 248, 255, 0.75) 85%,
+                                              rgba(248, 248, 255, 0) 100%);
+  color: darkmagenta;
+}
+
+.active_button:hover::after{
+  width: 0;
+}
+
+.active_button::after{
+  width: 75%;
+
+}
+
+.inactive_button::after{
+  width: 0;
+}
+
+.inactive_button:hover::after{
+  width: 75%;
+  background-color: darkmagenta;
+}
+
+.nav-item::after{
+  bottom: 10px;
+  left: 12.5%;
+  content: "";
+  position: absolute;
+  height: 1px;
+  background-color: ghostwhite;
+  transition-duration: 0.5s;
+}
+
+a{
+  all: unset;
+}
+
+.text {
+  width: auto;
+  height: auto;
+  padding: 5%;
+  border: 1px solid darkslateblue ;
+  border-radius: 0 0 30px 30px;
+  background-image: radial-gradient(circle, darkslateblue 0%, #6A1F8B 50%, darkmagenta 100% );
+}
+
+.parent{
+  width: 40%;
+  display: flex;
+  flex-direction: column ;
+  gap: 15px;
+}
+
+.container{
+  height: 100%;
+  width: 100%;
+  color: ghostwhite;
+  font-size: larger;
+}
+
+.inactive_container{
+  display: none;
+}
+
+.active_container{
+  display: block;
+
+}
+
+.logo{
+  padding: 2%;
+  width: 17.5%;
+
+  transform: scale(1, -1);
+}

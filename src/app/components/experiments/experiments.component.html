@@ -1,0 +1,48 @@
+<div class="container_new">
+  <span class="title_new">Conduct New Experiment</span>
+  <form class="parameters_grid" [formGroup]="parametersForm" (ngSubmit)="createParametersObject()">
+    <div class="grid_element" content="Alpha"><input type="text" formControlName="alpha" placeholder="Alpha value in [0, 1]."></div>
+    <div class="grid_element" content="Decay"><input type="text" formControlName="decay" placeholder="Decay value in [0, 1]."></div>
+    <div class="grid_element" content="Discount"><input type="text" formControlName="discount" placeholder="Discount value in [0, 1]."></div>
+    <div class="grid_element" content="Epsilon"><input type="text" formControlName="epsilon" placeholder="Epsilon value in [0, 1]."></div>
+    <div class="grid_element" content="Epochs"><input type="text" formControlName="epochs" placeholder="Number of epochs/run."></div>
+    <div class="grid_element" content="Limit"><input type="text" formControlName="limit" placeholder="Max number of states."></div>
+    <div class="grid_element" content="Runs"><input type="text" formControlName="runs" placeholder= "Number of runs."></div>
+    <div class="grid_element" content="Model"><input type="text" formControlName="model" placeholder="The type of experiment."></div>
+    <div class="grid_element" content="Graph"><input type="text" formControlName="generate_graph" placeholder="Generate the graph."></div>
+    <div class="grid_element" content="Instances"><input type="text" formControlName="instances" placeholder="Experiment's state."></div>
+    <input type="submit">
+  </form>
+  <div id="buttons_new">
+    <button class="buttons" >Save</button>
+    <button class="buttons">Clear</button>
+  </div>
+</div>
+
+<div class="container_history">
+  <span class="title_history">History</span>
+  <div class="sort">
+    <button (click)="sort.length>0 ? order=!order : null;
+                     sortExperiments()" id="sort_button" [innerHTML]="'Sort: ' + sort"></button>
+
+    <img *ngIf="order" class="arrow" src="assets/Images/down.svg">
+    <img *ngIf="!order" class="arrow" src="assets/Images/Up.svg">
+    <div class="sort_options">
+      <button (click)="sort='Name';
+                       order=!order;
+                       sortExperiments()"
+              class="option">Name
+      </button>
+      <button (click)="sort='Date';
+                       order=!order;
+                       sortExperiments()"
+              class="option">Date
+      </button>
+    </div>
+  </div>
+  <div class="preview_container">
+    <app-experiment-preview *ngFor="let experiment of experiments" [experiment]="experiment"></app-experiment-preview>
+  </div>
+</div>
+
+

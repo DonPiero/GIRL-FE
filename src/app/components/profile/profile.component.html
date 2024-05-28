@@ -1,0 +1,92 @@
+<div class="container_preview">
+  <div class="profileIdentity">
+    <div class="picture_container">
+      <img class="picture" [src]=profile?.profilePicture>
+    </div>
+    <div class="profileTitles">
+      <label [innerHTML]="profile?.firstName + ' ' + profile?.lastName"></label>
+    </div>
+    <div class="profileTitles" id="rank">
+      <label [innerHTML]="profile?.rank"></label>
+    </div>
+  </div>
+  <div class="line"></div>
+  <span class="experiments_title">Experiments</span>
+  <div id="information">
+    <div class="profileInfo">
+      <div class="profile_scores" [innerHTML]="profile?.ongoingExp"></div>
+      <span>Ongoing</span>
+    </div>
+    <div class="profileInfo">
+      <div class="profile_scores" [innerHTML]="profile?.completedExp"></div>
+      <span>Completed</span>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div id="buttons_1">
+    <div>
+      <img class = "button_icon" src="../assets/Images/delete-1.svg">
+      <div class="profile_buttons">
+        <span> Delete Account</span>
+      </div>
+    </div>
+    <div>
+      <img class = "button_icon" src="../assets/Images/sign-out-1.svg">
+      <div class="profile_buttons">
+        <span> Log Out</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container_editable">
+  <div class="profileImage">
+    <div class="picture_container">
+      <img class="picture_edit" [src]=profile?.profilePicture>
+    </div>
+    <img class="edit_edit" src="../assets/Images/edit.svg">
+  </div>
+  <form id="information_form">
+    <div class="edit_div">
+      <label>First Name: </label>
+      <input class="form_input" name="firstName" [(ngModel)]="editProfile.firstName" [placeholder]="profile?.firstName">
+    </div>
+    <div class="edit_div">
+      <label>Last Name: </label>
+      <input class="form_input" name="lastName" ngModel [(ngModel)]="editProfile.lastName" [placeholder]="profile?.lastName">
+    </div>
+    <div class="edit_div long_grid">
+      <label>Email Address: </label>
+      <input class="form_input" [placeholder]="profile?.email">
+    </div>
+    <div class="edit_div">
+      <label>Prefix: </label>
+      <input class="form_input" name="prefix" ngModel [(ngModel)]="editProfile.prefix" [placeholder]="profile?.prefix">
+    </div>
+    <div class="edit_div">
+      <label>Phone Number: </label>
+      <input class="form_input" name="phoneNumber" ngModel [(ngModel)]="editProfile.phoneNumber" [placeholder]="profile?.phoneNumber">
+    </div>
+    <div class="edit_div">
+      <label>Country: </label>
+      <input class="form_input" name="country" ngModel [(ngModel)]="editProfile.country" [placeholder]="profile?.country">
+    </div>
+    <div class="edit_div">
+      <label>City: </label>
+      <input class="form_input" name="city" ngModel [(ngModel)]="editProfile.city" [placeholder]="profile?.city">
+    </div>
+    <div class="edit_div">
+      <label>New Password: </label>
+      <input class="form_input" name="password" ngModel [(ngModel)]="editProfile.password" placeholder="********">
+    </div>
+    <div class="edit_div">
+      <label>Confirm Password: </label>
+      <input class="form_input" name="profilePicture" ngModel [(ngModel)]="editProfile.profilePicture" placeholder="********">
+    </div>
+  </form>
+  <div id="buttons_2">
+    <button (click)="updateProfile()" class="edit_buttons">Save Changes</button>
+    <button class="edit_buttons">Clear</button>
+  </div>
+</div>
+

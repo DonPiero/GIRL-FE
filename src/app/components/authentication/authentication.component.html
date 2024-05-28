@@ -1,0 +1,56 @@
+<div class="page">
+  <div class="login container">
+    <div class="header">
+      <div class="active">Register</div>
+      <div class="inactive" (click)="view = true">Log In</div>
+    </div>
+    <div class="elements">
+
+      <div class="element">
+        <span class="element_title">Email <span>*</span></span>
+        <div class="input">
+          <input type="email" name="email" [(ngModel)]="signUp.email">
+        </div>
+      </div>
+      <div class="element">
+        <span class="element_title">Password <span>*</span></span>
+        <div class="input">
+          <input type="password" name="password" [(ngModel)]="signUp.password">
+        </div>
+      </div>
+      <div class="element">
+        <span class="element_title">Repeat Password <span>*</span></span>
+        <div class="input">
+          <input type="password">
+        </div>
+      </div>
+      <div class="comment">
+        <input type="checkbox">
+        <span>I agree  to the processing of my personal data in accordance with the Privacy Policy</span>
+      </div>
+    </div>
+    <div class="button" (click)="createUser()">Register</div>
+  </div>
+  <div class="signup container">
+    <div class="header">
+      <div class="inactive" (click)="view = false">Register</div>
+      <div class="active">Log In</div>
+    </div>
+    <div class="elements">
+      <div class="element">
+        <span class="element_title">Email</span>
+        <div class="input">
+          <input type="email">
+        </div>
+      </div>
+      <div class="element">
+        <span class="element_title">Password</span>
+        <div class="input">
+          <input type="password">
+        </div>
+      </div>
+    </div>
+    <div class="button">Log In</div>
+  </div>
+  <div class="cover" [ngClass]="{'left':view, 'right':!view}"></div>
+</div>
