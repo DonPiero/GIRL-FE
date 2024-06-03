@@ -25,13 +25,14 @@
 .picture_container {
   width: 100px;
   height: 100px;
-  overflow: hidden;
   border-radius: 50px;
+  position: relative;
 }
 
 .picture {
   width: 100px;
   height: 100px;
+  border-radius: 50px;
 }
 
 #information {
@@ -160,6 +161,7 @@
 .picture_edit {
   width: 100px;
   height: 100px;
+  border-radius: 50px;
   cursor: pointer;
 }
 
@@ -245,5 +247,13 @@
 
 .profileImage {
   display: flex;
-  position: relative;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.email {
+  color: ghostwhite;
+  font-size: larger;
+  font-weight: bolder;
 }

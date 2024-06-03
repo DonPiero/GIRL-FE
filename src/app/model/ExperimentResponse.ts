@@ -2,8 +2,9 @@ export class ExperimentResponse{
   id: string;
   name: string;
   date: string;
+  state:string;
   model: number;
-  instance: number[];
+  instances: string;
   epsilon: number;
   decay: number;
   alpha: number;
@@ -16,8 +17,9 @@ export class ExperimentResponse{
     this.id = data.id;
     this.name = data.name;
     this.date = data.date;
+    this.state = data.state;
     this.model = data.model;
-    this.instance = data.instance;
+    this.instances = data.instance;
     this.epsilon = data.epsilon;
     this.decay = data.decay;
     this.alpha = data.alpha;

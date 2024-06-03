@@ -43,8 +43,11 @@
   <div class="profileImage">
     <div class="picture_container">
       <img class="picture_edit" [src]=profile?.profilePicture>
+      <img class="edit_edit" src="../assets/Images/edit.svg">
     </div>
-    <img class="edit_edit" src="../assets/Images/edit.svg">
+    <div class="email">
+      <label [innerHTML]="profile?.email"></label>
+    </div>
   </div>
   <form id="information_form">
     <div class="edit_div">
@@ -53,40 +56,36 @@
     </div>
     <div class="edit_div">
       <label>Last Name: </label>
-      <input class="form_input" name="lastName" ngModel [(ngModel)]="editProfile.lastName" [placeholder]="profile?.lastName">
-    </div>
-    <div class="edit_div long_grid">
-      <label>Email Address: </label>
-      <input class="form_input" [placeholder]="profile?.email">
+      <input class="form_input" name="lastName" [(ngModel)]="editProfile.lastName" [placeholder]="profile?.lastName">
     </div>
     <div class="edit_div">
       <label>Prefix: </label>
-      <input class="form_input" name="prefix" ngModel [(ngModel)]="editProfile.prefix" [placeholder]="profile?.prefix">
+      <input class="form_input" name="prefix" [(ngModel)]="editProfile.prefix" [placeholder]="profile?.prefix">
     </div>
     <div class="edit_div">
       <label>Phone Number: </label>
-      <input class="form_input" name="phoneNumber" ngModel [(ngModel)]="editProfile.phoneNumber" [placeholder]="profile?.phoneNumber">
+      <input class="form_input" name="phoneNumber" [(ngModel)]="editProfile.phoneNumber" [placeholder]="profile?.phoneNumber">
     </div>
     <div class="edit_div">
       <label>Country: </label>
-      <input class="form_input" name="country" ngModel [(ngModel)]="editProfile.country" [placeholder]="profile?.country">
+      <input class="form_input" name="country" [(ngModel)]="editProfile.country" [placeholder]="profile?.country">
     </div>
     <div class="edit_div">
       <label>City: </label>
-      <input class="form_input" name="city" ngModel [(ngModel)]="editProfile.city" [placeholder]="profile?.city">
+      <input class="form_input" name="city" [(ngModel)]="editProfile.city" [placeholder]="profile?.city">
     </div>
     <div class="edit_div">
       <label>New Password: </label>
-      <input class="form_input" name="password" ngModel [(ngModel)]="editProfile.password" placeholder="********">
+      <input class="form_input" name="password" [(ngModel)]="editProfile.password" placeholder="********">
     </div>
     <div class="edit_div">
       <label>Confirm Password: </label>
-      <input class="form_input" name="profilePicture" ngModel [(ngModel)]="editProfile.profilePicture" placeholder="********">
+      <input class="form_input" placeholder="********">
     </div>
   </form>
   <div id="buttons_2">
     <button (click)="updateProfile()" class="edit_buttons">Save Changes</button>
-    <button class="edit_buttons">Clear</button>
+    <button (click)="clear()" class="edit_buttons">Clear</button>
   </div>
 </div>
 

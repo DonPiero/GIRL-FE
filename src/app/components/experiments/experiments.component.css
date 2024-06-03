@@ -148,6 +148,14 @@
   display: block;
 }
 
+.comment{
+  color: ghostwhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 #sort_button
 {
   width: 40%;

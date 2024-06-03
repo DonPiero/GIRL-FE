@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Experiment} from "../../Classes/Experiment";
+import {ExperimentResponse} from "../../model/ExperimentResponse";
 
 
 @Component({
@@ -10,5 +10,5 @@ import {Experiment} from "../../Classes/Experiment";
   styleUrl: './experiment-preview.component.css'
 })
 export class ExperimentPreviewComponent {
-  @Input() experiment!:Experiment
+  @Input() experiment!:ExperimentResponse
 }

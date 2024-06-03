@@ -1,21 +1,24 @@
 <div class="container_new">
   <span class="title_new">Conduct New Experiment</span>
-  <form class="parameters_grid" [formGroup]="parametersForm" (ngSubmit)="createParametersObject()">
-    <div class="grid_element" content="Alpha"><input type="text" formControlName="alpha" placeholder="Alpha value in [0, 1]."></div>
-    <div class="grid_element" content="Decay"><input type="text" formControlName="decay" placeholder="Decay value in [0, 1]."></div>
-    <div class="grid_element" content="Discount"><input type="text" formControlName="discount" placeholder="Discount value in [0, 1]."></div>
-    <div class="grid_element" content="Epsilon"><input type="text" formControlName="epsilon" placeholder="Epsilon value in [0, 1]."></div>
-    <div class="grid_element" content="Epochs"><input type="text" formControlName="epochs" placeholder="Number of epochs/run."></div>
-    <div class="grid_element" content="Limit"><input type="text" formControlName="limit" placeholder="Max number of states."></div>
-    <div class="grid_element" content="Runs"><input type="text" formControlName="runs" placeholder= "Number of runs."></div>
-    <div class="grid_element" content="Model"><input type="text" formControlName="model" placeholder="The type of experiment."></div>
-    <div class="grid_element" content="Graph"><input type="text" formControlName="generate_graph" placeholder="Generate the graph."></div>
-    <div class="grid_element" content="Instances"><input type="text" formControlName="instances" placeholder="Experiment's state."></div>
-    <input type="submit">
+  <form class="parameters_grid" >
+    <div class="grid_element" content="Name"><input type="text" name="name" [(ngModel)]="newExperiment.name" placeholder="This experiment's name."></div>
+    <div class="grid_element" content="Alpha"><input type="number" step=".1" name="alpha" [(ngModel)]="newExperiment.alpha" placeholder="Alpha value in [0, 1]."></div>
+    <div class="grid_element" content="Decay"><input type="number" step=".1" name="decay" [(ngModel)]="newExperiment.decay" placeholder="Decay value in [0, 1]."></div>
+    <div class="grid_element" content="Discount"><input type="number" step=".1" name="discount" [(ngModel)]="newExperiment.discount" placeholder="Discount value in [0, 1]."></div>
+    <div class="grid_element" content="Epsilon"><input type="number" step=".1" name="epsilon" [(ngModel)]="newExperiment.epsilon" placeholder="Epsilon value in [0, 1]."></div>
+    <div class="grid_element" content="Epochs"><input type="number" step=".1" name="epochs" [(ngModel)]="newExperiment.epochs" placeholder="Number of epochs/run."></div>
+    <div class="grid_element" content="Limit"><input type="number" step=".1" name="limit" [(ngModel)]="newExperiment.limit" placeholder="Max number of states."></div>
+    <div class="grid_element" content="Runs"><input type="number" step=".1" name="runs" [(ngModel)]="newExperiment.runs" placeholder= "Number of runs."></div>
+    <div class="grid_element" content="Model"><input type="number" step=".1" name="model" [(ngModel)]="newExperiment.model" placeholder="The type of experiment."></div>
+    <div class="grid_element" content="Instances"><input type="text" name="instances" [(ngModel)]="newExperiment.instances" placeholder="Experiment's state."></div>
   </form>
+  <div class="comment">
+    <input type="checkbox" name="generate_graph" [(ngModel)]="newExperiment.generate_graph">
+    <span>Do you want a graph to be generated for this experiment?</span>
+  </div>
   <div id="buttons_new">
-    <button class="buttons" >Save</button>
-    <button class="buttons">Clear</button>
+    <button class="buttons" (click)="createExperiment()">Save</button>
+    <button class="buttons" (click)="clear()">Clear</button>
   </div>
 </div>
 

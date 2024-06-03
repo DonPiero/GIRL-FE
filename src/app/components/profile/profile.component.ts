@@ -45,4 +45,18 @@ export class ProfileComponent implements OnInit{
         this.profile = data;}
     )
   }
+
+  clear(){
+    this.editProfile = new UserEditProfileRequest(
+      {
+        "profilePicture": "",
+        "firstName": "",
+        "lastName": "",
+        "prefix": "",
+        "phoneNumber": "",
+        "country": "",
+        "city": "",
+        "password": "",
+      })
+  }
 }

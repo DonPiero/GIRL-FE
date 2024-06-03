@@ -11,7 +11,7 @@ export class ProfileService {
   constructor(private http: HttpClient) { }
 
   getProfile(){
-    return this.http.get<UserResponse>('http://localhost:8080/user/1')
+    return this.http.get<UserResponse>('http://localhost:8080/user/11')
   }
 
   updateProfile(request: UserEditProfileRequest){

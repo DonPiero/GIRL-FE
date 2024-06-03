@@ -1,7 +1,7 @@
-export class ExperimentCreate {
+export class ExperimentCreateRequest {
   name: string;
+  instances: string;
   model: number;
-  instance: number[];
   epsilon: number;
   decay: number;
   alpha: number;
@@ -13,7 +13,7 @@ export class ExperimentCreate {
   constructor(data: any) {
     this.name = data.name;
     this.model = data.model;
-    this.instance = data.instance;
+    this.instances = data.instance;
     this.epsilon = data.epsilon;
     this.decay = data.decay;
     this.alpha = data.alpha;
