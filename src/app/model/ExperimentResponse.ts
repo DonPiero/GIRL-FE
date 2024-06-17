@@ -1,5 +1,5 @@
 export class ExperimentResponse{
-  id: string;
+  id: number;
   name: string;
   date: string;
   state:string;
@@ -12,7 +12,8 @@ export class ExperimentResponse{
   runs: number;
   epochs: number;
   limit: number;
-  generate_graph: boolean;
+  optimisation: number;
+  generateGraph: boolean;
   constructor(data: any) {
     this.id = data.id;
     this.name = data.name;
@@ -27,6 +28,7 @@ export class ExperimentResponse{
     this.runs = data.runs;
     this.epochs = data.epochs;
     this.limit = data.limit;
-    this.generate_graph = data.generate_graph;
+    this.optimisation = data.optimisation;
+    this.generateGraph = data.generateGraph;
   }
 }

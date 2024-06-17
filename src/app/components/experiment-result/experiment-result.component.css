@@ -1,0 +1,162 @@
+:host {
+  width: calc(300vw - 301px);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container_preview{
+  width: 60%;
+  height: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5%;
+  border: 1px solid darkslateblue ;
+  border-radius: 50px;
+  background-image: radial-gradient(circle, darkslateblue 0%, #6A1F8B 50%, darkmagenta 100% );
+  overflow: scroll;
+  scrollbar-width: none;
+  gap: 40px;
+}
+
+
+
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: ghostwhite;
+  font-size: 300%;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: ghostwhite;
+  font-size: large;
+  font-weight: normal;
+}
+
+#results_title {
+  color: ghostwhite;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+#results {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  row-gap: 20px;
+}
+
+.resultsInfo {
+  color: ghostwhite;
+  display: flex;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.results_scores {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  padding: 20px;
+  aspect-ratio: 1;
+  border: 1px solid darkslateblue;
+  border-radius: 50%;
+  background-color: ghostwhite;
+  color: darkslateblue;
+  font-weight: bold;
+  font-size: large;
+}
+
+
+#parameters_title {
+  color: ghostwhite;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.parameters_grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.grid_element{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: ghostwhite;
+  font-size: larger;
+  font-weight: bold;
+  margin: 25px 0;
+}
+
+.grid_element:nth-child(10) {
+  grid-column: span 3;
+}
+
+#graph_title {
+  color: ghostwhite;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.graph_container {
+  width: 60%;
+  height: 60%;
+  margin: 0 0 5% 0;
+}
+
+.graph {
+  width: 100%;
+  height: 100%;
+}
+
+.line{
+  flex-shrink: 0;
+  height: 1px;
+  width: 100%;
+  background-color: lightgray;
+}
+
+#buttons_results {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.buttons {
+  border: 2px solid ghostwhite;
+  background-color: transparent;
+  color: ghostwhite;
+  border-radius: 10px;
+  min-width: 30%;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.3s;
+  padding: 5px;
+}
+
+.buttons:hover {
+  background-color: ghostwhite;
+  color: darkslateblue;
+}
+

@@ -54,6 +54,4 @@
 .logo{
   margin: auto;
   max-width: 60px;
-
-  transform: scale(1, -1);
 }

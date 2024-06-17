@@ -2,20 +2,18 @@
   <span class="title_new">Conduct New Experiment</span>
   <form class="parameters_grid" >
     <div class="grid_element" content="Name"><input type="text" name="name" [(ngModel)]="newExperiment.name" placeholder="This experiment's name."></div>
-    <div class="grid_element" content="Alpha"><input type="number" step=".1" name="alpha" [(ngModel)]="newExperiment.alpha" placeholder="Alpha value in [0, 1]."></div>
-    <div class="grid_element" content="Decay"><input type="number" step=".1" name="decay" [(ngModel)]="newExperiment.decay" placeholder="Decay value in [0, 1]."></div>
-    <div class="grid_element" content="Discount"><input type="number" step=".1" name="discount" [(ngModel)]="newExperiment.discount" placeholder="Discount value in [0, 1]."></div>
-    <div class="grid_element" content="Epsilon"><input type="number" step=".1" name="epsilon" [(ngModel)]="newExperiment.epsilon" placeholder="Epsilon value in [0, 1]."></div>
-    <div class="grid_element" content="Epochs"><input type="number" step=".1" name="epochs" [(ngModel)]="newExperiment.epochs" placeholder="Number of epochs/run."></div>
-    <div class="grid_element" content="Limit"><input type="number" step=".1" name="limit" [(ngModel)]="newExperiment.limit" placeholder="Max number of states."></div>
-    <div class="grid_element" content="Runs"><input type="number" step=".1" name="runs" [(ngModel)]="newExperiment.runs" placeholder= "Number of runs."></div>
-    <div class="grid_element" content="Model"><input type="number" step=".1" name="model" [(ngModel)]="newExperiment.model" placeholder="The type of experiment."></div>
-    <div class="grid_element" content="Instances"><input type="text" name="instances" [(ngModel)]="newExperiment.instances" placeholder="Experiment's state."></div>
+    <div class="grid_element" content="Alpha"><input type="number" min="0" max="1" step=".01" name="alpha" [(ngModel)]="newExperiment.alpha" placeholder="Alpha value in [0, 1]."></div>
+    <div class="grid_element" content="Decay"><input type="number" min="0" max="1" step=".01" name="decay" [(ngModel)]="newExperiment.decay" placeholder="Decay value in [0, 1]."></div>
+    <div class="grid_element" content="Discount"><input type="number" min="0" max="1" step=".01" name="discount" [(ngModel)]="newExperiment.discount" placeholder="Discount value in [0, 1]."></div>
+    <div class="grid_element" content="Epsilon"><input type="number" min="0" max="1" step=".01" name="epsilon" [(ngModel)]="newExperiment.epsilon" placeholder="Epsilon value in [0, 1]."></div>
+    <div class="grid_element" content="Epochs"><input type="number" min="1" max="1000" step="10" name="epochs" [(ngModel)]="newExperiment.epochs" placeholder="Number of epochs per run."></div>
+    <div class="grid_element" content="Limit"><input type="number" min="100" max="1000000" step="1000" name="limit" [(ngModel)]="newExperiment.limit" placeholder="Experiment's limit."></div>
+    <div class="grid_element" content="Runs"><input type="number" min="1" max="100" step="1" name="runs" [(ngModel)]="newExperiment.runs" placeholder= "Number of runs."></div>
+    <div class="grid_element" content="Model"><input type="number" min="1" max="6" step="1" name="model" [(ngModel)]="newExperiment.model" placeholder="The type of experiment."></div>
+    <div class="grid_element" content="Instances"><input type="text" name="instances" [(ngModel)]="newExperiment.instances" placeholder="8 instances like: a,b,c,d,e,f,g,h."></div>
+    <div class="grid_element" content="Optimisation"><input type="number" name="optimisation" min="0" max="3" step="1" [(ngModel)]="newExperiment.optimisation" placeholder="Experiment's optimisation."></div>
+    <div class="grid_element" content="Generate Graph"><input type="checkbox" class="check" name="generate_graph" [(ngModel)]="newExperiment.generateGraph" placeholder="Generate graph?"></div>
   </form>
-  <div class="comment">
-    <input type="checkbox" name="generate_graph" [(ngModel)]="newExperiment.generate_graph">
-    <span>Do you want a graph to be generated for this experiment?</span>
-  </div>
   <div id="buttons_new">
     <button class="buttons" (click)="createExperiment()">Save</button>
     <button class="buttons" (click)="clear()">Clear</button>
@@ -44,7 +42,7 @@
     </div>
   </div>
   <div class="preview_container">
-    <app-experiment-preview *ngFor="let experiment of experiments" [experiment]="experiment"></app-experiment-preview>
+    <app-experiment-preview (deleted)="refresh()" *ngFor="let experiment of experiments" [experiment]="experiment"></app-experiment-preview>
   </div>
 </div>
 

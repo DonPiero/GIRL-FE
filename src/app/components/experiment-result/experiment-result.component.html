@@ -1,0 +1,46 @@
+<div class="container_preview">
+  <div id="header">
+    <div class="title">Mock</div>
+    <div class="subtitle">--- COMPLETED EXPERIMENT ---</div>
+  </div>
+  <div class="line"></div>
+  <span id="results_title">RESULTS</span>
+  <div id="results">
+    <div class="resultsInfo">
+      <div class="results_scores">100<!-- [innerHTML]="experiment?.percentage" --></div>
+      <span>Percentage</span>
+    </div>
+    <div class="resultsInfo">
+      <div class="results_scores">0<!--[innerHTML]="profile?.Qsize" --></div>
+      <span>Size of Q</span>
+    </div>
+    <div class="resultsInfo">
+      <div class="results_scores">58095.56<!--[innerHTML]="profile?.time" --></div>
+      <span>Duration</span>
+    </div>
+  </div>
+  <div class="line"></div>
+  <span id="parameters_title">PARAMETERS</span>
+  <div class="parameters_grid">
+    <div class="grid_element">Model: 6</div>
+    <div class="grid_element">Epsilon: 1.0</div>
+    <div class="grid_element">Decay: 0.95</div>
+    <div class="grid_element">Alpha: 0.97</div>
+    <div class="grid_element">Discount: 0.97</div>
+    <div class="grid_element">Runs: 1</div>
+    <div class="grid_element">Epochs: 100</div>
+    <div class="grid_element">Optimisation: 3</div>
+    <div class="grid_element">Limit: 1000000</div>
+    <div class="grid_element">This experiment's instance: [1, 3, 5, 7, 6, 0, 2, 4, 8]</div>
+  </div>
+  <div class="line"></div>
+  <span id="graph_title">GRAPH</span>
+  <div class="graph_container">
+    <img class="graph" src="assets/Images/mock.png">
+  </div>
+  <div id="buttons_results">
+    <button class="buttons" >Download the CSV file</button>
+    <button class="buttons" >Download the PNG file</button>
+    <button class="buttons" >Modify the parameters</button>
+  </div>
+</div>

@@ -42,8 +42,9 @@
 <div class="container_editable">
   <div class="profileImage">
     <div class="picture_container">
-      <img class="picture_edit" [src]=profile?.profilePicture>
-      <img class="edit_edit" src="../assets/Images/edit.svg">
+      <img class="picture_edit" #new_picture [src]="profile?.profilePicture">
+      <img class="edit_edit" src="../assets/Images/edit.svg" (click)="fileInput.click()">
+      <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" style="display:none"/>
     </div>
     <div class="email">
       <label [innerHTML]="profile?.email"></label>
@@ -76,13 +77,14 @@
     </div>
     <div class="edit_div">
       <label>New Password: </label>
-      <input class="form_input" name="password" [(ngModel)]="editProfile.password" placeholder="********">
+      <input class="form_input" type="password" name="password" [(ngModel)]="editProfile.password" placeholder="********">
     </div>
     <div class="edit_div">
       <label>Confirm Password: </label>
-      <input class="form_input" placeholder="********">
+      <input class="form_input" type="password" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="********">
     </div>
   </form>
+  <div *ngIf="errorMessage" class="errorMessage">{{ errorMessage }}</div>
   <div id="buttons_2">
     <button (click)="updateProfile()" class="edit_buttons">Save Changes</button>
     <button (click)="clear()" class="edit_buttons">Clear</button>

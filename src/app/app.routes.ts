@@ -5,6 +5,7 @@ import {ExperimentsComponent} from "./components/experiments/experiments.compone
 import {DocumentationComponent} from "./components/documentation/documentation.component";
 import {AuthenticationComponent} from "./components/authentication/authentication.component";
 import {MainComponent} from "./components/main/main.component";
+import {ExperimentResultComponent} from "./components/experiment-result/experiment-result.component";
 
 
 export const routes: Routes = [
@@ -13,6 +14,7 @@ export const routes: Routes = [
       {path: 'profile', component: ProfileComponent},
       {path: 'experiments', component: ExperimentsComponent},
       {path: 'documentation', component: DocumentationComponent},
+      {path: 'experiment-result', component: ExperimentResultComponent},
       {path: '', redirectTo: 'home', pathMatch: 'full'}
     ]},
   {path: 'authentication', component: AuthenticationComponent}

@@ -257,3 +257,12 @@
   font-size: larger;
   font-weight: bolder;
 }
+
+.errorMessage {
+  color: ghostwhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}

@@ -1,0 +1,36 @@
+:host {
+  width: calc(300vw - 301px);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container_preview{
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5%;
+  border: 1px solid darkslateblue ;
+  border-radius: 50px;
+  background-image: radial-gradient(circle, darkslateblue 0%, #6A1F8B 50%, darkmagenta 100% );
+
+}
+
+.title {
+  color: ghostwhite;
+  font-size: 300%;
+  font-weight: bold;
+}
+
+.window {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 90%;
+}
