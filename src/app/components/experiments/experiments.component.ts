@@ -1,11 +1,10 @@
-import {Component, numberAttribute, OnInit} from '@angular/core';
+import {Component, Input, numberAttribute, OnInit} from '@angular/core';
 import {ExperimentPreviewComponent} from "../experiment-preview/experiment-preview.component";
 import {NgForOf, NgIf} from "@angular/common";
 import {ExperimentsService} from "../../services/experiments.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {FormBuilder} from "@angular/forms";
-import {ExperimentResponse} from "../../model/ExperimentResponse";
-import {ExperimentCreateRequest} from "../../model/ExperimentCreateRequest";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-experiments',
@@ -15,7 +14,8 @@ import {ExperimentCreateRequest} from "../../model/ExperimentCreateRequest";
     NgForOf,
     NgIf,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './experiments.component.html',
   styleUrl: './experiments.component.css'
@@ -24,20 +24,8 @@ export class ExperimentsComponent implements OnInit {
   public experiments!: any[]
   public sort: string = ""
   public order: boolean = true
-  public newExperiment = {
-    name: '',
-    model: null,
-    instances: '',
-    epsilon: null,
-    decay: null,
-    alpha: null,
-    discount: null,
-    runs: null,
-    epochs: null,
-    limit: null,
-    optimisation: null,
-    generateGraph: false,
-  };
+  public newExperiment: any;
+
 
   constructor(private experimentsService: ExperimentsService) {
   }
@@ -46,6 +34,7 @@ export class ExperimentsComponent implements OnInit {
     this.experimentsService.getExperiments().subscribe((data) => {
       this.experiments = data;
     });
+    this.newExperiment = this.experimentsService.getParams();
   }
 
   refresh(){
@@ -54,7 +43,7 @@ export class ExperimentsComponent implements OnInit {
 
   sortExperiments(): void {
     if (this.sort === "Sort By:" || this.sort === "Date") {
-      this.experiments.sort((a: ExperimentResponse, b: ExperimentResponse) => {
+      this.experiments.sort((a: any, b: any) => {
         if (a.date <= b.date) {
           return -1;
         } else {
@@ -62,7 +51,7 @@ export class ExperimentsComponent implements OnInit {
         }
       })
     } else {
-      this.experiments.sort((a: ExperimentResponse, b: ExperimentResponse) => {
+      this.experiments.sort((a: any, b: any) => {
         if (a.name <= b.name) {
           return -1;
         } else {
@@ -76,7 +65,7 @@ export class ExperimentsComponent implements OnInit {
   }
 
   createExperiment() {
-    let json = new ExperimentCreateRequest({
+    let json = {
       "name": this.newExperiment.name,
       "model": '[' + String(this.newExperiment.model) + ']',
       "instances": '[' + this.newExperiment.instances + ']',
@@ -89,7 +78,7 @@ export class ExperimentsComponent implements OnInit {
       "limit": String(this.newExperiment.limit),
       "optimisation": String(this.newExperiment.optimisation),
       "generateGraph": String(this.newExperiment.generateGraph)
-    })
+    }
     this.experimentsService.createExperiments(json).subscribe(
       response => {
         console.log(json)

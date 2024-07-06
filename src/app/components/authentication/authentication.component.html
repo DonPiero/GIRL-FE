@@ -21,15 +21,16 @@
       <div class="element">
         <span class="element_title">Repeat Password <span>*</span></span>
         <div class="input">
-          <input type="password">
+          <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword">
         </div>
       </div>
+      <div *ngIf="errorMessage" class="errorMessage">{{ errorMessage }}</div>
       <div class="comment">
         <input type="checkbox">
         <span>I agree  to the processing of my personal data in accordance with the Privacy Policy</span>
       </div>
     </div>
-    <div class="button" (click)="createUser()">Register</div>
+    <div class="button" (click)="signup()">Register</div>
   </div>
   <div class="signup container">
     <div class="header">
@@ -40,17 +41,17 @@
       <div class="element">
         <span class="element_title">Email</span>
         <div class="input">
-          <input type="email">
+          <input type="email" [(ngModel)]="signIn.email">
         </div>
       </div>
       <div class="element">
         <span class="element_title">Password</span>
         <div class="input">
-          <input type="password">
+          <input type="password" [(ngModel)]="signIn.password">
         </div>
       </div>
     </div>
-    <div class="button">Log In</div>
+    <div class="button" (click)="signin()">Log In</div>
   </div>
   <div class="cover" [ngClass]="{'left':view, 'right':!view}"></div>
 </div>

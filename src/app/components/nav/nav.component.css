@@ -30,8 +30,7 @@
 .navButton:hover{
   background-color: rgba(248, 248, 255, 0.75);
   color: darkmagenta;
-  /* text-shadow: 1px 1px 0 ghostwhite, 1px -1px 0 ghostwhite, -1px -1px 0 ghostwhite, -1px 1px 0 ghostwhite;
-  */
+
 }
 
 .buttons_container{

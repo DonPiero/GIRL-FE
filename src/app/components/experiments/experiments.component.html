@@ -42,7 +42,7 @@
     </div>
   </div>
   <div class="preview_container">
-    <app-experiment-preview (deleted)="refresh()" *ngFor="let experiment of experiments" [experiment]="experiment"></app-experiment-preview>
+    <app-experiment-preview routerLink="/experiment/{{experiment.id}}" (deleted)="refresh()" *ngFor="let experiment of experiments" [experiment]="experiment"></app-experiment-preview>
   </div>
 </div>
 

@@ -45,4 +45,9 @@ img{
   font-size: smaller;
 }
 
+.date {
+  position: absolute;
+  right:0;
+}
+
 

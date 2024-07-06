@@ -1,46 +1,48 @@
 <div class="container_preview">
   <div id="header">
-    <div class="title">Mock</div>
+    <div class="title" [innerHTML]="experiment?.name"></div>
     <div class="subtitle">--- COMPLETED EXPERIMENT ---</div>
   </div>
   <div class="line"></div>
   <span id="results_title">RESULTS</span>
   <div id="results">
     <div class="resultsInfo">
-      <div class="results_scores">100<!-- [innerHTML]="experiment?.percentage" --></div>
+      <div class="results_scores" [innerHTML]="experiment?.percentage"></div>
       <span>Percentage</span>
     </div>
     <div class="resultsInfo">
-      <div class="results_scores">0<!--[innerHTML]="profile?.Qsize" --></div>
+      <div class="results_scores" [innerHTML]="experiment?.qsize"></div>
       <span>Size of Q</span>
     </div>
     <div class="resultsInfo">
-      <div class="results_scores">58095.56<!--[innerHTML]="profile?.time" --></div>
+      <div class="results_scores" [innerHTML]="experiment?.time"></div>
       <span>Duration</span>
     </div>
   </div>
   <div class="line"></div>
   <span id="parameters_title">PARAMETERS</span>
   <div class="parameters_grid">
-    <div class="grid_element">Model: 6</div>
-    <div class="grid_element">Epsilon: 1.0</div>
-    <div class="grid_element">Decay: 0.95</div>
-    <div class="grid_element">Alpha: 0.97</div>
-    <div class="grid_element">Discount: 0.97</div>
-    <div class="grid_element">Runs: 1</div>
-    <div class="grid_element">Epochs: 100</div>
-    <div class="grid_element">Optimisation: 3</div>
-    <div class="grid_element">Limit: 1000000</div>
-    <div class="grid_element">This experiment's instance: [1, 3, 5, 7, 6, 0, 2, 4, 8]</div>
+    <div class="grid_element" [innerHTML]="'Model: ' + experiment?.model"></div>
+    <div class="grid_element" [innerHTML]="'Epsilon: ' + experiment?.epsilon"></div>
+    <div class="grid_element" [innerHTML]="'Decay: ' + experiment?.decay"></div>
+    <div class="grid_element" [innerHTML]="'Alpha: ' + experiment?.alpha"></div>
+    <div class="grid_element" [innerHTML]="'Discount: ' + experiment?.discount"></div>
+    <div class="grid_element" [innerHTML]="'Run: ' + experiment?.run"></div>
+    <div class="grid_element" [innerHTML]="'Epochs: ' + experiment?.epochs"></div>
+    <div class="grid_element" [innerHTML]="'Optimisation: ' + experiment?.optimisation"></div>
+    <div class="grid_element" [innerHTML]="'Limit: ' + experiment?.limit"></div>
+    <div class="grid_element" [innerHTML]="'Instance: ' + experiment?.instance"></div>
   </div>
   <div class="line"></div>
-  <span id="graph_title">GRAPH</span>
-  <div class="graph_container">
-    <img class="graph" src="assets/Images/mock.png">
+  <div class = "graph_box" *ngIf="experiment?.generateGraph.toLowerCase() == 'true'">
+    <span id="graph_title">GRAPH</span>
+    <div class="graph_container">
+      <img class="graph" [src]="'data:image/png;base64,' + experiment?.png">
+    </div>
   </div>
   <div id="buttons_results">
-    <button class="buttons" >Download the CSV file</button>
-    <button class="buttons" >Download the PNG file</button>
-    <button class="buttons" >Modify the parameters</button>
+    <a class="buttons" >Download the CSV file</a>
+    <a class="buttons" [href]="'data:image/png;base64,' + experiment?.png" download="graph.png">Download the PNG file</a>
+    <a class="buttons" (click)="setParams()" routerLink="/experiments" >Modify the parameters</a>
   </div>
 </div>

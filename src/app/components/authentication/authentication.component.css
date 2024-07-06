@@ -46,6 +46,7 @@
   font-weight: 500;
   border-bottom: 1px solid ghostwhite;
   color: ghostwhite;
+  cursor: pointer;
 }
 
 .header .active{
@@ -57,6 +58,8 @@
   font-weight: 500;
   border-bottom: 1px solid ghostwhite;
   color: ghostwhite;
+  cursor: pointer;
+
 }
 
 .elements{
@@ -122,7 +125,14 @@ input:focus{
   font-size: large;
   color: darkslateblue;
   border: 1px solid darkslateblue;
+  cursor: pointer;
 }
+
+.button:hover {
+  background-color: ghostwhite;
+  color: darkmagenta;
+}
+
 
 .comment{
   display: flex;
@@ -167,3 +177,14 @@ input:focus{
   0%{ left: 0; background-image: radial-gradient(circle at 100%, darkslateblue 0%, #6A1F8B 50%, darkmagenta 100% );}
   100%{ left: 50%;background-image: radial-gradient(circle at 0%, darkslateblue 0%, #6A1F8B 50%, darkmagenta 100% );}
 }
+
+.errorMessage {
+  color: ghostwhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+

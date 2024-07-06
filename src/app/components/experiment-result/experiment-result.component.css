@@ -118,9 +118,16 @@
 }
 
 .graph_container {
-  width: 60%;
-  height: 60%;
-  margin: 0 0 5% 0;
+  width: 85%;
+  height: 85%;
+
+}
+
+.graph_box{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
 }
 
 .graph {
@@ -153,6 +160,7 @@
   white-space: nowrap;
   transition: 0.3s;
   padding: 5px;
+  text-decoration: none;
 }
 
 .buttons:hover {

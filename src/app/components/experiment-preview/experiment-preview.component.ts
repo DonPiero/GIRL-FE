@@ -1,5 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {ExperimentResponse} from "../../model/ExperimentResponse";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ExperimentsService} from "../../services/experiments.service";
 
 
@@ -10,10 +9,10 @@ import {ExperimentsService} from "../../services/experiments.service";
   templateUrl: './experiment-preview.component.html',
   styleUrl: './experiment-preview.component.css'
 })
-export class ExperimentPreviewComponent {
+export class ExperimentPreviewComponent implements OnInit{
   @Input() experiment:any
   @Output() deleted = new EventEmitter<any>();
-  constructor(private experimentsService: ExperimentsService){console.log(this.experiment)}
+  constructor(private experimentsService: ExperimentsService){}
 
   delete(){
     this.experimentsService.deleteExperiments(this.experiment.id).subscribe(
@@ -22,5 +21,9 @@ export class ExperimentPreviewComponent {
         this.deleted.emit()
       })
 
+  }
+
+  ngOnInit(): void {
+    console.log(this.experiment)
   }
 }

@@ -1,9 +1,8 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ProfileService} from "../../services/profile.service";
-import {UserResponse} from "../../model/UserResponse";
 import {FormsModule} from "@angular/forms";
-import {UserEditProfileRequest} from "../../model/UserEditProfileRequest";
 import {NgIf} from "@angular/common";
+import {AuthenticationService} from "../../services/authentication.service";
 
 @Component({
   selector: 'app-profile',
@@ -17,12 +16,12 @@ import {NgIf} from "@angular/common";
 })
 export class ProfileComponent implements OnInit{
   @ViewChild('new_picture', { static: false }) picture!: ElementRef;
-  profile: UserResponse | undefined;
-  editProfile: UserEditProfileRequest;
+  profile: any | undefined;
+  editProfile: any;
   confirmPassword: string = "";
   errorMessage: string = "";
-  constructor(private profileService: ProfileService) {
-    this.editProfile = new UserEditProfileRequest(
+  constructor(private profileService: ProfileService, private authenticationService: AuthenticationService) {
+    this.editProfile =
       {
         "profilePicture": "",
         "firstName": "",
@@ -32,12 +31,12 @@ export class ProfileComponent implements OnInit{
         "country": "",
         "city": "",
         "password": "",
-      })
+      }
   }
 
   ngOnInit(): void {
     this.profileService.getProfile().subscribe(
-      (data: UserResponse) => {
+      (data: any) => {
         this.profile = data;
       }
     )
@@ -49,15 +48,24 @@ export class ProfileComponent implements OnInit{
     } else {
       this.errorMessage = "";
       this.profileService.updateProfile(this.editProfile).subscribe(
-        (data: UserResponse) => {
+        (data: any) => {
           this.profile = data;
         }
       );
     }
   }
 
+  logout(){
+    this.authenticationService.logout();
+  }
+
+  delete(){
+    this.profileService.deleteProfile().subscribe(() => console.log("Deleted!"));
+    this.logout();
+  }
+
   clear() {
-    this.editProfile = new UserEditProfileRequest({
+    this.editProfile = {
       "profilePicture": "",
       "firstName": "",
       "lastName": "",
@@ -66,7 +74,7 @@ export class ProfileComponent implements OnInit{
       "country": "",
       "city": "",
       "password": ""
-    });
+    };
     this.confirmPassword = "";
     this.errorMessage = "";
   }
